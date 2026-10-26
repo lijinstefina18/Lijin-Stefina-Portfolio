@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useMotionValue, useScroll, useSpring, useTransform } from 'framer-motion';
-import { achievements, certifications, education, profile, projects, type ProfileId } from '../data/portfolio';
+import { profile, projects, type ProfileId } from '../data/portfolio';
 import { useFinePointer } from '../hooks/useMedia';
 import { useSmoothScroll } from '../hooks/smoothScroll';
 import { EASE, Magnetic, Particles } from './fx';
@@ -36,18 +36,35 @@ export default function Hero({ onPlay, onResume, profileId }: { onPlay: () => vo
   const chipY = useTransform(py, [-1, 1], [12, -12]);
   const glowX = useTransform(px, [-1, 1], ['-6%', '6%']);
 
-  const meta = [
-    education[0].period.split(' – ')[0].split(' ')[1] + ' – Present',
-    'B.Tech AI & ML',
-    `${projects.length} Originals`,
-    `${certifications.length} Certifications`,
-  ];
 
-  const floating = [
-    { text: education[0].score, sub: 'B.Tech AI & ML', pos: 'left-[2%] top-[30%]', depth: 1 },
-    { text: `${achievements[0].title}`, sub: achievements[0].org, pos: 'right-[0%] top-[18%]', depth: -1 },
-    { text: 'Java · React · Node.js', sub: 'Primary stack', pos: 'right-[4%] bottom-[24%]', depth: 0.6 },
-  ];
+const meta = [
+  '2026 – 2030',
+  'B.Tech CSE',
+  `${projects.length} Original`,
+  'RIT Chennai',
+];
+
+const floating = [
+  {
+    text: 'Class 12: 92.5%',
+    sub: 'Academic Background',
+    pos: 'left-[2%] top-[30%]',
+    depth: 1,
+  },
+  {
+    text: 'Lucent',
+    sub: 'UI/UX Design Project',
+    pos: 'right-[0%] top-[18%]',
+    depth: -1,
+  },
+  {
+    text: 'Figma · HTML · CSS',
+    sub: 'Design & Development',
+    pos: 'right-[4%] bottom-[24%]',
+    depth: 0.6,
+  },
+];
+
 
   return (
     <section
