@@ -15,7 +15,7 @@ export const profile = {
   fullName: 'Lijin Stefina',
   displayName: 'Lijin Stefina',
   firstName: 'LIJIN',
-  seriesTag: 'THE SERIES',
+  seriesTag: 'LIJIN PORTFOLIO',
   originalLabel: 'A LIJIN ORIGINAL',
   role: 'Aspiring Software Developer',
   tagline: [
