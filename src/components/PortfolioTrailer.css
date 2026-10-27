@@ -1,0 +1,384 @@
+
+.trailer-screen {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #08080d;
+  color: white;
+  padding: 25px 4%;
+}
+.trailer-ambient {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 65%, #99122b55, transparent 50%),
+    radial-gradient(circle at 80% 15%, #4d132644, transparent 45%);
+}
+.trailer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ff4260;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .25em;
+}
+.trailer-top button,
+.trailer-buttons button {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  background: #ffffff0c;
+  border: 1px solid #ffffff20;
+  border-radius: 50%;
+  color: white;
+}
+.trailer-buttons button:disabled {
+  opacity: .3;
+  cursor: not-allowed;
+}
+.trailer-progress {
+  display: flex;
+  gap: 7px;
+  margin-top: 22px;
+}
+.trailer-progress button {
+  flex: 1;
+  height: 4px;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: #ffffff25;
+  overflow: hidden;
+}
+.trailer-progress button span {
+  display: block;
+  height: 100%;
+  background: #ff234b;
+}
+.trailer-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 45px 0 20px;
+}
+.trailer-chapter {
+  color: #ff4260;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .32em;
+}
+.trailer-content h1 {
+  max-width: 1100px;
+  margin: 25px auto;
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(54px, 10vw, 150px);
+  line-height: 1;
+}
+.trailer-description {
+  max-width: 640px;
+  color: #c5c1c9;
+  font-size: clamp(14px, 1.6vw, 19px);
+  line-height: 1.7;
+}
+.trailer-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+.trailer-tags span {
+  padding: 8px 12px;
+  border: 1px solid #ffffff28;
+  border-radius: 30px;
+  color: #d2cbd2;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+.trailer-character {
+  width: clamp(110px, 15vw, 180px);
+  height: clamp(110px, 15vw, 180px);
+  margin-top: 22px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 30px #f3153b55);
+}
+.trailer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding-top: 20px;
+  color: #b1acb7;
+  font-size: 12px;
+}
+.trailer-buttons { display: flex; gap: 10px; }
+.trailer-skip {
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+@media (max-width: 600px) {
+  .trailer-screen { padding: 20px 5%; }
+  .trailer-content h1 { font-size: clamp(48px, 13vw, 85px); }
+  .trailer-content { padding: 35px 0; }
+  .trailer-tags span { font-size: 9px; }
+  .trailer-bottom { flex-wrap: wrap; }
+  .trailer-buttons button { width: 37px; height: 37px; }
+}
+
+/* ========================================
+   CINEMATIC TRAILER SIZE FIX
+   ======================================== */
+
+.trailer-screen {
+  height: 100svh !important;
+  min-height: 0 !important;
+  max-height: 100svh !important;
+  overflow: hidden !important;
+}
+
+.trailer-content {
+  min-height: 0;
+  overflow: hidden;
+  padding: 10px 0 !important;
+}
+
+.trailer-content h1 {
+  font-size: clamp(42px, 6.5vw, 100px) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.025em;
+  max-width: 1100px;
+  margin: 12px auto !important;
+  overflow-wrap: break-word;
+}
+
+.trailer-description {
+  font-size: clamp(13px, 1.25vw, 17px) !important;
+  line-height: 1.5;
+}
+
+.trailer-tags {
+  margin-top: 12px !important;
+}
+
+.trailer-character {
+  width: clamp(65px, 12vh, 125px) !important;
+  height: clamp(65px, 12vh, 125px) !important;
+  margin-top: 12px !important;
+  flex-shrink: 1;
+}
+
+.trailer-bottom {
+  flex-shrink: 0;
+  padding-top: 10px !important;
+}
+
+@media (max-width: 600px) {
+  .trailer-content h1 {
+    font-size: clamp(38px, 9vw, 65px) !important;
+  }
+
+  .trailer-character {
+    width: 85px !important;
+    height: 85px !important;
+  }
+
+  .trailer-content {
+    padding: 8px 0 !important;
+  }
+}
+
+@media (max-height: 650px) {
+  .trailer-content h1 {
+    font-size: clamp(35px, 5vw, 70px) !important;
+  }
+
+  .trailer-character {
+    width: 65px !important;
+    height: 65px !important;
+    margin-top: 6px !important;
+  }
+
+  .trailer-tags {
+    margin-top: 8px !important;
+  }
+}
+
+
+
+
+
+/* CINEMATIC TRAILER TYPOGRAPHY */
+
+.trailer-content h1 {
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(65px, 8.5vw, 145px);
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+  text-align: center;
+}
+
+.trailer-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+
+
+
+/* =========================================
+   FINAL FIX — ALL 5 TRAILER CHAPTERS
+   ========================================= */
+
+/* Keep the top bar and progress in their own space */
+.trailer-top,
+.trailer-progress {
+  position: relative;
+  flex-shrink: 0;
+  z-index: 5;
+}
+
+/* Reserve enough space for the chapter content */
+.trailer-content {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 0;
+  flex: 1 1 auto;
+  margin: 0 auto;
+  padding: 45px 0 20px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+/* This is the ACTUAL chapter heading class in your TSX */
+.trailer-content .trailer-chapter {
+  position: static !important;
+  flex-shrink: 0;
+  display: block;
+  width: 100%;
+  margin: 0 0 22px !important;
+  padding: 0 !important;
+  transform: none !important;
+  color: #ff4260;
+  font-size: clamp(13px, 1.15vw, 18px) !important;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Keep the big cinematic title */
+.trailer-content h1 {
+  flex-shrink: 0;
+  max-width: 1200px;
+  margin: 0 auto 25px !important;
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(42px, 6.5vw, 100px) !important;
+  line-height: 1.02 !important;
+  text-align: center;
+}
+
+/* Description */
+.trailer-content .trailer-description {
+  flex-shrink: 0;
+  margin: 0 auto;
+  max-width: 700px;
+  font-size: clamp(15px, 1.6vw, 23px) !important;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Tags */
+.trailer-content .trailer-tags {
+  flex-shrink: 0;
+  margin-top: 30px !important;
+}
+
+/* Robot */
+.trailer-content .trailer-character {
+  flex-shrink: 0;
+  width: clamp(65px, 12vh, 125px) !important;
+  height: clamp(65px, 12vh, 125px) !important;
+  margin-top: 25px !important;
+}
+
+/* Bottom controls remain visible */
+.trailer-bottom {
+  position: relative;
+  z-index: 5;
+  flex-shrink: 0;
+}
+
+/* Smaller screens */
+@media (max-width: 700px) {
+  .trailer-content {
+    padding: 25px 0 15px !important;
+  }
+
+  .trailer-content .trailer-chapter {
+    font-size: 12px !important;
+    margin-bottom: 15px !important;
+  }
+
+  .trailer-content h1 {
+    font-size: clamp(38px, 9vw, 65px) !important;
+    margin-bottom: 18px !important;
+  }
+
+  .trailer-content .trailer-tags {
+    margin-top: 16px !important;
+  }
+
+  .trailer-content .trailer-character {
+    width: 75px !important;
+    height: 75px !important;
+    margin-top: 12px !important;
+  }
+}
+
+/* Short laptop/browser windows */
+@media (max-height: 650px) {
+  .trailer-content {
+    padding: 12px 0 !important;
+  }
+
+  .trailer-content .trailer-chapter {
+    margin-bottom: 10px !important;
+  }
+
+  .trailer-content h1 {
+    font-size: clamp(35px, 5vw, 70px) !important;
+    margin-bottom: 12px !important;
+  }
+
+  .trailer-content .trailer-tags {
+    margin-top: 10px !important;
+  }
+
+  .trailer-content .trailer-character {
+    width: 65px !important;
+    height: 65px !important;
+    margin-top: 8px !important;
+  }
+}

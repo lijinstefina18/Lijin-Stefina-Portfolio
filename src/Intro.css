@@ -1,0 +1,103 @@
+
+.intro-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #050505;
+  color: white;
+}
+
+.intro-red-glow {
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  background: #e50914;
+  filter: blur(180px);
+  opacity: 0.25;
+  animation: intro-glow-pulse 3s ease-in-out infinite;
+}
+
+.intro-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 24px;
+  text-align: center;
+}
+
+.intro-label {
+  margin-bottom: 28px;
+  color: #ff525d;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 6px;
+}
+
+.intro-name {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(40px, 9vw, 120px);
+  font-weight: 900;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.intro-name span {
+  color: #e50914;
+}
+
+.intro-subtitle {
+  margin-top: 25px;
+  color: #e50914;
+  font-size: clamp(17px, 3vw, 32px);
+  font-weight: 800;
+  letter-spacing: 12px;
+}
+
+.intro-flash {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: #e50914;
+}
+
+@keyframes intro-glow-pulse {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.15;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.35;
+  }
+}
+
+@media (max-width: 600px) {
+  .intro-name {
+    font-size: clamp(28px, 8vw, 50px);
+    white-space: normal;
+  }
+
+  .intro-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+  }
+
+  .intro-subtitle {
+    font-size: 18px;
+    letter-spacing: 5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-red-glow {
+    animation: none;
+  }
+}
